@@ -12,7 +12,7 @@ export const Cards = (props) => {
   };
 
   let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${value}`;
-  const fetechApiKey = async (url) => {
+  const fetchApiKey = async (url) => {
     try {
       const res = await fetch(url);
       let data = await res.json();
@@ -27,9 +27,9 @@ export const Cards = (props) => {
 
   useEffect(() => {
     return () => {
-      fetechApiKey(api);
+      fetchApiKey(api);
     };
-  }, [value, state]);
+  }, [, value, state]);
 
   return (
     <>
