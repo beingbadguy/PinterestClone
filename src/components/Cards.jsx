@@ -29,7 +29,7 @@ export const Cards = (props) => {
     return () => {
       fetechApiKey(api);
     };
-  }, [setuser, value, state]);
+  }, [value, state]);
 
   return (
     <>
