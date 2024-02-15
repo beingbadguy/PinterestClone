@@ -11,7 +11,7 @@ export const Cards = (props) => {
     setstate("Loading...");
   };
 
-  let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${value}`;
+  let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=10`;
   const fetchApiKey = async (url) => {
     try {
       const res = await fetch(url);
