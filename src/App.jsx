@@ -7,7 +7,7 @@ function App() {
   const locomotiveScroll = new LocomotiveScroll();
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center items-center">
       <Nav></Nav>
       <Cards></Cards>
     </div>

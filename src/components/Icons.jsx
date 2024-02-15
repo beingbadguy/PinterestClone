@@ -4,10 +4,12 @@ import { FaUser } from "react-icons/fa";
 
 export const Icons = () => {
   return (
-    <div className=" items-center gap-10 hidden md:flex  ">
-      <MdNotificationsActive className=" sm:h-[15px] md:h-[25px] cursor-pointer" />
-      <IoChatbubbleEllipses className="sm:h-[15px] md:h-[25px] cursor-pointer" />
-      <FaUser className="sm:h-[15px] md:h-[25px] cursor-pointer" />
+    <div className=" items-center gap-10 hidden lg:flex md:hidden  ">
+      <MdNotificationsActive className=" md:h-[30px] md:w-[30px] sm:h-[20px] w-[20px]   cursor-pointer" />
+      <IoChatbubbleEllipses className=" md:h-[30px] md:w-[30px] sm:h-[20px] sm:w-[20px]   cursor-pointer" />
+      <FaUser className=" md:h-[30px] md:w-[30px] sm:h-[20px] sm:w-[20px]    cursor-pointer" />
+
+      {/* sm:h-[25px] md:h-[25px] */}
       {/* <img
         src="../../dist/notification.png"
         alt=""
