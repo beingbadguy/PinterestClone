@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 export const Cards = (props) => {
   let [user, setuser] = useState([]);
-  let [value, setvalue] = useState(7);
+  let [value, setvalue] = useState();
   let [state, setstate] = useState("Click to load more...");
 
   let ValueChanger = (e) => {
@@ -10,12 +10,9 @@ export const Cards = (props) => {
     e.preventDefault();
     setstate("Loading...");
   };
-
-  // <<<<<<< HEAD
+  value = 9;
   let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${value}`;
-  // =======
-  // let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${}`;
-  // >>>>>>> 47a0ad8e122761ecbe0473b765a71c538e9fb711
+
   const fetchApiKey = async (url) => {
     try {
       const res = await fetch(url);
@@ -23,7 +20,7 @@ export const Cards = (props) => {
       setuser(data.photos);
       ValueChanger();
     } catch {
-      // console.log("it has error");
+      console.log("it has error");
     }
 
     setstate("Click to load more...");
