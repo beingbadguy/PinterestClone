@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 export const Cards = (props) => {
   let [user, setuser] = useState([]);
-  let [value, setvalue] = useState();
+  let [value, setvalue] = useState(9);
   let [state, setstate] = useState("Click to load more...");
 
   let ValueChanger = (e) => {
@@ -10,7 +10,7 @@ export const Cards = (props) => {
     e.preventDefault();
     setstate("Loading...");
   };
-  value = 9;
+
   let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${value}`;
 
   const fetchApiKey = async (url) => {
@@ -30,7 +30,7 @@ export const Cards = (props) => {
     return () => {
       fetchApiKey(api);
     };
-  }, [setuser, value, state]);
+  }, [setuser, setvalue, state]);
 
   return (
     <>
