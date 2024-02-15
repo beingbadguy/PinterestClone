@@ -13,24 +13,23 @@ export const Cards = (props) => {
 
   let api = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=${value}`;
 
-  const fetchApiKey = async (url) => {
-    try {
-      const res = await fetch(url);
-      let data = await res.json();
-      setuser(data.photos);
-      ValueChanger();
-    } catch {
-      console.log("it has error");
-    }
-
-    setstate("Click to load more...");
-  };
-
   useEffect(() => {
     return () => {
+      const fetchApiKey = async (url) => {
+        try {
+          const res = await fetch(url);
+          let data = await res.json();
+          setuser(data.photos);
+          ValueChanger();
+        } catch {
+          console.log("it has error");
+        }
+
+        setstate("Click to load more...");
+      };
       fetchApiKey(api);
     };
-  }, [setuser, setvalue, state]);
+  }, [value]);
 
   return (
     <>
