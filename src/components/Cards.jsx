@@ -26,9 +26,9 @@ export const Cards = (props) => {
     setstate("Click to load more...");
   };
   useEffect(() => {
-    return () => {
+    
       fetchApiKey(api);
-    };
+    
   }, []);
 
   useEffect(() => {
