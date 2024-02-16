@@ -5,7 +5,7 @@ export const Hamburger = ({ eventClickref, alt }) => {
   const myref = useRef();
 
   let eventHandle = () => {
-    eventClickref.current.classList.toggle("translate-x-[00px]");
+    eventClickref.current.classList.toggle("translate-x-[0px]");
     alt.current.classList.toggle("hidden");
     // myref.current.classList.toggle("text-red-500");
   };
