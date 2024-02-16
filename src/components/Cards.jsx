@@ -7,7 +7,7 @@ export const Cards = (props) => {
   let ValueChanger = (e) => {
     value = value + 5;
     setvalue(value);
-    e.preventDefault();
+    // e.preventDefault();
     setstate("Loading...");
   };
 
@@ -19,8 +19,8 @@ export const Cards = (props) => {
       let data = await res.json();
       setuser(data.photos);
       ValueChanger();
-    } catch {
-      console.log("it has error");
+    } finally {
+      // console.log("it has error");
     }
 
     setstate("Click to load more...");
@@ -38,7 +38,7 @@ export const Cards = (props) => {
   }, [state, setvalue]);
 
   return (
-    <>
+    <div ref={props.cardref}>
       <div id="container" className="flex flex-wrap justify-center items-center  gap-6  mt-[50px] mb-10">
         {user.map((item, index) => (
           <img key={index} src={item.url} className=" h-[400px] w-[150px] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[350px]  rounded-2xl object-cover" />
@@ -50,6 +50,6 @@ export const Cards = (props) => {
           {/* Click to load more... */}
         </button>
       </div>
-    </>
+    </div>
   );
 };
